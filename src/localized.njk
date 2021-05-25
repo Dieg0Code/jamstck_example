@@ -1,8 +1,12 @@
 ---
-title: Siempre re facherito
+title: Daily Breifing
 layout: base.njk
+pagination:
+    data: news
+    size: 1
+    alias: news
+permalink: /{{ news.country }}/index.html
 ---
-
 
 <div class="container">
     <h1>Buen Dia!!</h1>
@@ -12,7 +16,7 @@ layout: base.njk
     </div>
 
     <ul>
-    {% for article in news[0].articles %} 
+    {% for article in news.articles %} 
         <li>
             <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
             <span>{{ article.source.name }} - <time>{{ article.publishedAt }}</time></span>
